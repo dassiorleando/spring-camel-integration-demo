@@ -14,8 +14,13 @@ public class FileProcessRoute extends RouteBuilder {
             .log("New file processed: ${file:name}");
 
         from("file://files/?preMove=processing&move=processed/${date:now:yyyy-MM-dd}-${file:name}")
+
             .setHeader("CamelAwsS3Key", simple("${date:now:yyyy-MM-dd}-${file:name}"))
-            .to("aws2-s3://demo-camel-bucket?useDefaultCredentialsProvider=true")
+            .to("aws2-s3://demo-camel-bucket")
+
+            .transform(simple("File processed successfully!"))
+            .toD("slack:general")
+
             .bean(SampleService.class, "getResponse(${exchange})")
             .log("New file processed: ${file:name}");
     }

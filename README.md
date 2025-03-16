@@ -8,6 +8,7 @@ Just a demo project to showcasing Spring Boot and Apache Camel integration capab
 - The folder named **files** should be created at the root of the project.
 - Provide environment variables or fill in the **application.properties** file.
 - Create the bucket "demo-camel-bucket" on **AWS S3**.
+- Set up a **Slack** token that can publish a message to the **general** channel.
 
 ## How it Works?
 
