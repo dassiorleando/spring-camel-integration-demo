@@ -4,7 +4,13 @@ Just a demo project to showcasing Spring Boot and Apache Camel integration capab
 
 ## Prerequisites
 
-Java 17 or newer version is needed to build and run the project.
+- Java 17 or newer version is needed to build and run the project.
+- The folder named **files** should be created at the root of the project.
+
+## How it Works?
+
+- Processing files are saved in the files/processing folder.
+- Processed files are saved in the files/processed folder.
 
 ## Build
 

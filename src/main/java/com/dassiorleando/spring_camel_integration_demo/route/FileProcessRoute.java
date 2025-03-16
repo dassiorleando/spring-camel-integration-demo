@@ -12,6 +12,10 @@ public class FileProcessRoute extends RouteBuilder {
         from("direct:file-process")
             .bean(SampleService.class, "getResponse(${exchange})")
             .log("New file processed: ${file:name}");
+
+        from("file://files/?preMove=processing&move=processed/${date:now:yyyy-MM-dd}-${file:name}")
+            .bean(SampleService.class, "getResponse(${exchange})")
+            .log("New file processed: ${file:name}");
     }
 
 }
