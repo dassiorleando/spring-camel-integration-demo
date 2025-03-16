@@ -6,6 +6,8 @@ Just a demo project to showcasing Spring Boot and Apache Camel integration capab
 
 - Java 17 or newer version is needed to build and run the project.
 - The folder named **files** should be created at the root of the project.
+- Provide environment variables or fill in the **application.properties** file.
+- Create the bucket "demo-camel-bucket" on **AWS S3**.
 
 ## How it Works?
 
