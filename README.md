@@ -1,8 +1,8 @@
-# Spring Apache Camel Integration Demo
+# Apache Camel & Spring Boot: Integration Demo
 
 Just a demo project to showcasing Spring Boot and Apache Camel integration capabilities.
 
-Every time a new “file” is added to a folder, upload it to “AWS S3”, send an SMS notification to a specified phone number using “Twilio”, and send a message to a “Slack” channel.
+Every time a new “file” is added to the folder named "files", let's upload it to “AWS S3”, send an SMS notification to a specified phone number using “Twilio”, and send a message to a “Slack” channel.
 
 How it Works?
 - **Camel** is used for the integration within a **Spring Boot** project.
@@ -14,9 +14,10 @@ How it Works?
 
 - Java 17 or newer version is needed to build and run the project.
 - The folder named **files** should be created at the root of the project.
+- Setup AWS profile with S3 permissions and get the **access key** and **secret key**.
+- Create the bucket **demo-camel-bucket** on **AWS S3**.
+- Set up a **Slack token** that can publish a message to the **general** channel.
 - Provide environment variables or fill in the credentials in the **application.properties** file.
-- Create the bucket "demo-camel-bucket" on **AWS S3**.
-- Set up a **Slack** token that can publish a message to the **general** channel.
 
 ## Build
 
