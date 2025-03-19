@@ -17,6 +17,7 @@ How it Works?
 - Setup AWS profile with S3 permissions and get the **access key** and **secret key**.
 - Create the bucket **demo-camel-bucket** on **AWS S3**.
 - Set up a **Slack token** that can publish a message to the **general** channel.
+- Set up a trial **Twilio** account for testing: accountSid, username, and password.
 - Provide environment variables or fill in the credentials in the **application.properties** file.
 
 ## Build
