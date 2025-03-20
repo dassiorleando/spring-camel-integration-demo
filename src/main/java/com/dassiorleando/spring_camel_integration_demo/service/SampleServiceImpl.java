@@ -20,8 +20,8 @@ public class SampleServiceImpl implements SampleService {
         Map<String, Object> body = exchange.getIn().getBody(Map.class);
         JsonObject jo = new JsonObject();
         jo.put("success", true);
-        jo.put("message", "File processed successfully");
-        jo.put("data", body);
+        jo.put("message", "Action processed successfully.");
+//        jo.put("data", body);
         exchange.getIn().setBody(jo);
     }
 

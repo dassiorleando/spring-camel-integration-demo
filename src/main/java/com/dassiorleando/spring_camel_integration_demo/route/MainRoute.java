@@ -1,5 +1,6 @@
 package com.dassiorleando.spring_camel_integration_demo.route;
 
+import com.dassiorleando.spring_camel_integration_demo.dto.AlertDTO;
 import com.dassiorleando.spring_camel_integration_demo.dto.ResponseDTO;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
@@ -18,14 +19,16 @@ public class MainRoute extends RouteBuilder {
                 .responseMessage().code(200).message("Return the sample data").endResponseMessage()
                 .to("bean:sampleService?method=getSampleResponse()");
 
-        rest("/file-process").description("File process REST Endpoint")
+        rest("/alert").description("Alert REST Endpoint")
             .consumes("application/json")
             .produces("application/json")
 
-            .get().description("File process endpoint.")
+            .post().description("Send a notification to the team.")
+                .type(AlertDTO.class)
                 .outType(ResponseDTO.class)
-                .responseMessage().code(200).message("Return some data").endResponseMessage()
-                .to("direct:file-process");
+//                .param().name("id").type(path).description("The ID of the entity").dataType("string").endParam()
+                .responseMessage().code(200).message("Alert sent.").endResponseMessage()
+                .to("direct:alert");
     }
 
 }

@@ -9,10 +9,6 @@ public class FileProcessRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("direct:file-process")
-            .bean(SampleService.class, "getResponse(${exchange})")
-            .log("New file processed: ${file:name}");
-
         from("file://files/?preMove=processing&move=processed/${date:now:yyyy-MM-dd}-${file:name}")
             .log(">>> read file from the file system")
 
